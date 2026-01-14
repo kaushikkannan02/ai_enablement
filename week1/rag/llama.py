@@ -3,15 +3,12 @@ OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = "llama3"
 
 
-def get_prompt(context, conversation_history, query):
-  prompt = f"""Based on the following context and conversation history, please provide a relevant and contextual response.
-    If the answer cannot be derived from the context, only use the conversation history or say "I cannot answer this based on the provided information."
+def get_prompt(context, query):
+  prompt = f"""Based on the following context, please provide a relevant and contextual response.
+    If the answer cannot be derived from the context, or say "I cannot answer this based on the provided information."
 
     Context from documents:
     {context}
-
-    Previous conversation:
-    {conversation_history}
 
     Human: {query}
 
@@ -19,9 +16,9 @@ def get_prompt(context, conversation_history, query):
   return prompt
 
 
-def generate_response(query: str, context: str, conversation_history: str = ""):
+def generate_response(query: str, context: str):
     """Generate a response using LLaMA via Ollama"""
-    prompt = get_prompt(context, conversation_history, query)
+    prompt = get_prompt(context, query)
 
     try:
         response = requests.post(

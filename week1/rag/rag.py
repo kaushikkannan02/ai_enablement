@@ -31,7 +31,7 @@ def conversational_rag_query(
     print("Sources:", sources)
 
     # Generate response using **current context + conversation history**
-    response = generate_response(query, context, conversation_history)
+    response = generate_response(query, context)
 
     # Store only user/assistant messages
     add_message(session_id, "user", query)
