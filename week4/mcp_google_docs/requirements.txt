@@ -1,0 +1,25 @@
+fastapi
+uvicorn
+pydantic
+
+# LangChain core stack
+langchain
+langchain-community
+langchain-aws
+langchain_text_splitters
+boto3 
+requests
+
+# Local LLM (zero cost)
+ollama
+
+# Google Docs MCP integration
+google-api-python-client
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+
+chromadb 
+langchain-chroma
+
+tavily-python
