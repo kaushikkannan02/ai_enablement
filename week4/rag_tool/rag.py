@@ -125,7 +125,7 @@ rag_chain = (
     | StrOutputParser()
 )
 
-# ✅ Tool that uses the FULL chain
+
 hr_tool = Tool(
     name="hr_policy_search",
     description="Search Presidio's HR policies for information about vacation, sick leave, benefits, work hours, etc.",

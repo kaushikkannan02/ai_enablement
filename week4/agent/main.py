@@ -39,8 +39,8 @@ def main():
             
             # Run the agent
             response = policy_agent.run(user_input)
-            print("Answer:::")
-            print(response)
+            # print("Answer:::")
+            # print(response)
             
         except KeyboardInterrupt:
             print("\n\nGoodbye! 👋\n")

@@ -21,7 +21,7 @@ def get_credentials():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                "credentials.json", SCOPES
+                "mcp_google_docs/credentials.json", SCOPES
             )
             creds = flow.run_local_server(port=0)
 
@@ -37,7 +37,6 @@ def search_insurance_docs(query: str):
     drive_service = build("drive", "v3", credentials=creds)
     docs_service = build("docs", "v1", credentials=creds)
 
-    # 1️⃣ Search files in Drive
     response = drive_service.files().list(
         q="mimeType='application/vnd.google-apps.document' "
           f"and fullText contains '{query}'",

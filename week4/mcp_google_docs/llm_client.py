@@ -96,7 +96,7 @@ def answer_insurance_query(query: str) -> str:
     response = llm.invoke(final_prompt)
     return response.content
 
-# ✅ Tool that uses the LLM
+
 insurance_tool = Tool(
     name="insurance_policy_search",
     description="Search Presidio's insurance policies for information about coverage, limits, premiums, claims procedures, etc.",

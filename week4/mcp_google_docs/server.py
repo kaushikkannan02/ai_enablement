@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from tools import TOOLS, run_tool
+from .tools import TOOLS, run_tool
 
 app = FastAPI(
     title="Presidio MCP – Google Docs (Insurance)",
