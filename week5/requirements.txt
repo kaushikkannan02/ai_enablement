@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pydantic
+
+langchain
+langchain-community
+langchain-aws
+langchain_text_splitters
+boto3 
+requests
+
+chromadb 
+langchain-chroma
+
+tavily-python

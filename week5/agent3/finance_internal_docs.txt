@@ -1,0 +1,75 @@
+PRESIDIO FINANCE POLICIES AND PROCEDURES
+
+1. EXPENSE REIMBURSEMENT POLICY
+
+All business-related expenses must be submitted for reimbursement within 30 days of the expense date. Employees must use the Concur expense management system to submit claims. Each expense must include a valid receipt showing date, amount, vendor name, and items purchased. Expenses without receipts will not be reimbursed except in cases of lost receipts with manager approval.
+
+Reimbursable expenses include: business travel, client meals, office supplies purchased for work, professional development courses approved in advance, and business mileage at $0.67 per mile. Non-reimbursable expenses include: personal items, commuting costs, traffic violations, and entertainment without business purpose.
+
+2. TRAVEL EXPENSE GUIDELINES
+
+Domestic Travel: Employees may book flights in economy class for trips under 5 hours. For flights over 5 hours, premium economy is permitted with manager approval. Hotel accommodation is reimbursed up to $200 per night in standard cities and $300 per night in high-cost cities (New York, San Francisco, Boston, etc.). Actual costs above these limits require VP approval.
+
+International Travel: Business class flights are permitted for international flights over 8 hours. Hotel accommodation is reimbursed up to $250 per night with receipts. Employees must obtain travel insurance through the company's preferred provider for international trips exceeding 7 days.
+
+Meal Per Diems: Breakfast $15, Lunch $25, Dinner $40. Alcohol is reimbursed up to $20 per day with receipts when accompanied by a business meal. Tips are reimbursable up to 20% of the meal cost.
+
+3. CORPORATE CREDIT CARD POLICY
+
+Corporate credit cards are issued to employees in director-level positions and above, or to employees who travel frequently for business. Cards must be used exclusively for business expenses. Personal charges are strictly prohibited and may result in disciplinary action.
+
+Credit card statements must be reconciled monthly in Concur by the 5th business day of the following month. Missing receipts must be explained in writing. Three consecutive months of late reconciliation will result in card suspension. Lost or stolen cards must be reported immediately to both the bank and the Finance team.
+
+4. PURCHASE ORDER AND PROCUREMENT PROCESS
+
+All purchases over $1,000 require a purchase order (PO) approved through the procurement system. POs under $5,000 require manager approval. POs between $5,000-$25,000 require director approval. POs over $25,000 require VP approval and may require competitive bidding.
+
+Preferred vendors must be used whenever possible to leverage negotiated discounts. New vendor requests require completion of a vendor registration form and may require financial and security assessments. Technology purchases require IT department approval regardless of amount.
+
+5. INVOICE PROCESSING AND PAYMENT TERMS
+
+Vendor invoices should be submitted to ap@presidio.com with corresponding PO numbers. Invoices are processed weekly and payment is made according to vendor terms (typically Net 30 or Net 45). Invoices without valid PO numbers may be rejected or delayed.
+
+Payment methods include ACH (preferred), wire transfer for international vendors, and check for vendors unable to accept electronic payment. Wire transfers require 3 business days advance notice. Expedited payments require CFO approval and may incur additional fees.
+
+6. BUDGET PLANNING AND ALLOCATION
+
+Annual budgets are prepared in Q4 for the following fiscal year. Department managers must submit budget requests by October 15th including detailed justification for headcount, technology, travel, and operational expenses. Finance reviews submissions and works with leadership to finalize budgets by December 1st.
+
+Quarterly budget reviews are conducted to assess spending against plan. Variances over 10% require written explanation. Budget transfers between cost centers require director approval. New budget requests mid-year require business case justification and executive approval.
+
+7. FINANCIAL REPORTING AND MONTH-END CLOSE
+
+Month-end close occurs within 5 business days of month end. Department managers must review their P&L statements and provide commentary on significant variances. Accruals for known expenses without invoices must be submitted by the 2nd business day of the new month.
+
+Financial dashboards are updated weekly showing revenue, expenses, headcount, and key metrics. Monthly financial packages are distributed to leadership by the 7th business day. Quarterly board packages require additional analysis and are due 10 business days after quarter end.
+
+8. ACCOUNTS RECEIVABLE AND COLLECTIONS
+
+Customer invoices are generated monthly based on contract terms. Payment terms are Net 30 unless otherwise negotiated. Accounts over 60 days past due are escalated to collections. Interest charges of 1.5% per month may be applied to overdue accounts per contract terms.
+
+Sales teams are responsible for ensuring customer billing information is accurate. Finance sends payment reminders at 15, 30, and 45 days past due. Accounts over 90 days past due may be referred to external collections or legal action with executive approval.
+
+9. CAPITAL EXPENDITURE (CAPEX) APPROVAL
+
+Capital expenditures are defined as purchases over $5,000 with useful life exceeding one year. CAPEX requests require detailed business justification including ROI analysis, alternatives considered, and ongoing maintenance costs. All CAPEX requires CFO approval regardless of amount.
+
+Approved CAPEX is tracked against annual budget. Unbudgeted CAPEX requests require executive committee approval. CAPEX purchases are capitalized and depreciated over useful life (3 years for technology, 5 years for furniture, 7 years for equipment).
+
+10. EMPLOYEE ADVANCE AND LOAN POLICY
+
+Employee salary advances are available in cases of financial hardship due to emergency situations. Advance requests up to $2,000 require manager and HR approval. Advances are repaid through payroll deductions over a maximum of 6 months.
+
+Relocation loans up to $10,000 are available for new hires relocating over 100 miles. Loans are forgiven over 2 years. Employees leaving Presidio before 2 years must repay the prorated balance. Company loans for other purposes are not available.
+
+11. AUDIT AND COMPLIANCE PROCEDURES
+
+Presidio undergoes annual external financial audits and quarterly internal audits. All employees must cooperate fully with audit requests and provide documentation within requested timeframes. Finance maintains SOX compliance controls and conducts regular testing.
+
+Expense audits are conducted monthly with random sampling of 10% of expense reports. Fraudulent expense claims result in immediate termination and may be referred for criminal prosecution. Employees aware of financial improprieties must report to the CFO or ethics hotline.
+
+12. TAX COMPLIANCE AND REPORTING
+
+Presidio complies with all federal, state, and international tax obligations. Employees traveling internationally for business must track days for tax residency purposes. Forms W-9 must be collected from all US vendors. International vendors require Forms W-8BEN.
+
+1099 forms are issued to contractors and vendors as required by January 31st. Employees must report any tax notices received from authorities to Finance immediately. The Finance team coordinates with external tax advisors for all tax planning and compliance matters.
