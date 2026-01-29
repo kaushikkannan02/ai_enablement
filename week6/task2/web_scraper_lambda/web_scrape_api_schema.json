@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Web Scraper Tool",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://example.com"
+    }
+  ],
+  "paths": {
+    "/scrape": {
+      "post": {
+        "tags": ["WebScraper"],
+        "operationId": "webScrapeUrl",
+        "summary": "Scrape text from a webpage",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "URL to scrape"
+                  }
+                },
+                "required": ["url"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Scraped page content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "description": "Extracted text content"
+                    },
+                    "source_url": {
+                      "type": "string",
+                      "description": "Original URL"
+                    }
+                  },
+                  "required": ["text", "source_url"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

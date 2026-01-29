@@ -1,0 +1,9 @@
+define flow unsafe_input
+  when user asks about hacking
+    bot respond "I can’t help with hacking or system exploitation."
+    stop
+
+define flow unsafe_output
+  when bot mentions passwords
+    bot respond "I can’t share sensitive information."
+    stop

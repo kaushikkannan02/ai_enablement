@@ -1,0 +1,8 @@
+{
+  "agentId": "CCZNEDALHD",
+  "agentAliasId": "TSTALIASID",
+  "sessionId": "test-session-1",
+  "input": {
+    "text": "Crawl this URL: https://example.com"
+  }
+}

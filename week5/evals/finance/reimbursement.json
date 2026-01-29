@@ -1,0 +1,9 @@
+{
+  "input": "How do I file a reimbursement?",
+  "expected_route": "FINANCE",
+  "expected_trajectory": [
+    "received_user_input",
+    "classified_as_finance",
+    "routed_to_finance_agent"
+  ]
+}

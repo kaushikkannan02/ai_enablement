@@ -1,10 +1,9 @@
-from typing import TypedDict, Literal
+from typing import TypedDict, Literal, List
 
 from langchain_aws import ChatBedrock
 from langchain_core.messages import SystemMessage, HumanMessage
 from langgraph.graph import StateGraph, END
 
-# Import your specialist agents
 from agent2.agent import run_it_agent
 from agent3.agent import run_finance_agent
 
@@ -16,6 +15,8 @@ class SupervisorState(TypedDict):
     user_input: str
     route: Literal["IT", "FINANCE", "UNKNOWN"]
     response: str
+    trajectory: List[str]
+    tools_used: List[str]
 
 
 # -----------------------------
@@ -24,10 +25,7 @@ class SupervisorState(TypedDict):
 llm = ChatBedrock(
     model_id="anthropic.claude-3-sonnet-20240229-v1:0",
     region_name="us-east-1",
-    model_kwargs={
-        "temperature": 0,
-        "max_tokens": 50,
-    },
+    model_kwargs={"temperature": 0, "max_tokens": 50},
 )
 
 
@@ -37,13 +35,12 @@ llm = ChatBedrock(
 CLASSIFIER_PROMPT = """
 You are a supervisor agent.
 
-Your task is to classify the user's request into ONE category:
+Classify the user's request into ONE category:
 - IT
 - FINANCE
 - UNKNOWN
 
 Return ONLY one word: IT, FINANCE, or UNKNOWN.
-Do NOT explain your choice.
 """
 
 
@@ -51,48 +48,45 @@ Do NOT explain your choice.
 # NODE 1: CLASSIFY
 # -----------------------------
 def classify_node(state: SupervisorState) -> SupervisorState:
+    state["trajectory"].append("received_user_input")
+    state["tools_used"].append("llm_classifier")
+
     messages = [
         SystemMessage(content=CLASSIFIER_PROMPT),
         HumanMessage(content=state["user_input"]),
     ]
 
     result = llm.invoke(messages).content.strip().upper()
+    route = result if result in {"IT", "FINANCE"} else "UNKNOWN"
 
-    if result not in {"IT", "FINANCE"}:
-        result = "UNKNOWN"
+    state["trajectory"].append(f"classified_as_{route.lower()}")
 
-    return {
-        **state,
-        "route": result,
-    }
+    return {**state, "route": route}
 
 
 # -----------------------------
 # NODE 2A: ROUTE TO IT
 # -----------------------------
 def it_node(state: SupervisorState) -> SupervisorState:
+    state["trajectory"].append("routed_to_it_agent")
     answer = run_it_agent(state["user_input"])
-    return {
-        **state,
-        "response": answer,
-    }
+    return {**state, "response": answer}
 
 
 # -----------------------------
 # NODE 2B: ROUTE TO FINANCE
 # -----------------------------
 def finance_node(state: SupervisorState) -> SupervisorState:
+    state["trajectory"].append("routed_to_finance_agent")
     answer = run_finance_agent(state["user_input"])
-    return {
-        **state,
-        "response": answer,
-    }
+    return {**state, "response": answer}
 
 
 # -----------------------------
 # NODE 2C: UNKNOWN
 # -----------------------------
 def unknown_node(state: SupervisorState) -> SupervisorState:
+    state["trajectory"].append("routed_to_unknown")
     return {
         **state,
         "response": (
@@ -106,11 +100,11 @@ def unknown_node(state: SupervisorState) -> SupervisorState:
 # ROUTING LOGIC
 # -----------------------------
 def route_decision(state: SupervisorState) -> str:
-    if state["route"] == "IT":
-        return "it"
-    if state["route"] == "FINANCE":
-        return "finance"
-    return "unknown"
+    return {
+        "IT": "it",
+        "FINANCE": "finance",
+        "UNKNOWN": "unknown",
+    }[state["route"]]
 
 
 # -----------------------------
@@ -143,16 +137,25 @@ agent_1 = graph.compile()
 
 
 # -----------------------------
-# RUN FUNCTION
+# RUN FUNCTION (AgentEval-ready)
 # -----------------------------
-def run_supervisor(user_input: str) -> str:
+def run_supervisor(user_input: str, return_trace: bool = False):
     state: SupervisorState = {
         "user_input": user_input,
         "route": "UNKNOWN",
         "response": "",
+        "trajectory": [],
+        "tools_used":[],
     }
 
     final_state = agent_1.invoke(state)
+
+    if return_trace:
+        return final_state["response"], {
+            "trajectory": final_state["trajectory"],
+            "route": final_state["route"],
+        }
+
     return final_state["response"]
 
 
@@ -164,5 +167,17 @@ if __name__ == "__main__":
         q = input("\nAsk Support (or 'exit'): ")
         if q.lower() == "exit":
             break
+
+        response, trace = run_supervisor(q, return_trace=True)
+
         print("\n--- RESPONSE ---")
-        print(run_supervisor(q))
+        print(response)
+
+        print("\n--- TRACE ---")
+        for k, v in trace.items():
+            print(f"{k}: {v}")
+
+
+
+
+

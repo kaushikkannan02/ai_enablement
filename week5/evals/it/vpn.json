@@ -1,0 +1,9 @@
+{
+  "input": "How do I configure VPN?",
+  "expected_route": "IT",
+  "expected_trajectory": [
+    "received_user_input",
+    "classified_as_it",
+    "routed_to_it_agent"
+  ]
+}

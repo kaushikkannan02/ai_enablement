@@ -196,7 +196,8 @@ INSTRUCTIONS:
 5. Do NOT rephrase the user's question when calling tools.
 6. Do NOT add assumptions or external knowledge.
 
-If the question is not Finance-related, clearly say so and stop.
+If the question is not finance-related, respond EXACTLY with:
+"This is not a finance-related question."
 """
 
 
@@ -302,7 +303,7 @@ agent_3 = graph.compile()
 # -----------------------------
 # RUN FUNCTION
 # -----------------------------
-def run_finance_agent(user_input: str) -> str:
+def run_finance_agent(user_input: str, return_trace: bool = False):
     state: AgentState = {
         "messages": [
             SystemMessage(content=SYSTEM_PROMPT),
@@ -314,9 +315,25 @@ def run_finance_agent(user_input: str) -> str:
 
     final_state = agent_3.invoke(state)
 
+    # Extract final response
+    response = "No response generated."
     for msg in reversed(final_state["messages"]):
         if isinstance(msg, BaseMessage) and msg.content:
-            return msg.content
+            response = msg.content
+            break
 
-    return "No response generated."
+    # 🔧 FIX: build tools_used list
+    tools_used = []
+    if final_state.get("used_internal_tool"):
+        tools_used.append("finance_internal_policy_search")
+    if final_state.get("used_web_tool"):
+        tools_used.append("external_web_research")
 
+    trace = {
+        "tools_used": tools_used
+    }
+
+    if return_trace:
+        return response, trace
+
+    return response

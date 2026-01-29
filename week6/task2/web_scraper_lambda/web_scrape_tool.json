@@ -1,0 +1,22 @@
+{
+  "toolName": "web_scrape",
+  "description": "Fetches and extracts clean text from a given URL",
+  "toolSpec": {
+    "inputSchema": {
+      "json": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The URL to crawl"
+          }
+        },
+        "required": ["url"]
+      }
+    }
+  },
+  "toolType": "LAMBDA",
+  "lambdaFunction": {
+    "lambdaArn": "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:bedrock-web-scraper"
+  }
+}
